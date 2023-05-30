@@ -3,6 +3,7 @@ import { Layout } from '../components';
 // GraphQL imports
 import { gql, useQuery } from '@apollo/client';
 import TrackCard from '../containers/track-card';
+import QueryResult from '../components/query-result';
 
 /** TRACKS query to retrieve all tracks */
 const TRACKS = gql`
@@ -35,9 +36,11 @@ const Tracks = () => {
   // otherwise, we render the received query data
   return (
     <Layout grid>
-      {data?.tracksForHome?.map((track) => (
-        <TrackCard key={track.id} track={track} />
-      ))}
+      <QueryResult error={error} loading={loading} data={data}>
+        {data?.tracksForHome?.map((track) => (
+          <TrackCard key={track.id} track={track} />
+        ))}
+      </QueryResult>
     </Layout>
   );
 };
