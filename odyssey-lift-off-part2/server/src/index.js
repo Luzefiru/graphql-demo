@@ -13,10 +13,10 @@ async function startApolloServer() {
 
   const { url } = await startStandaloneServer(server, {
     context: async () => {
-      const { cache } = server;
+      const { cache } = server; // enable caching
       return {
         dataSources: {
-          trackAPI: new TrackAPI({ cache }),
+          trackAPI: new TrackAPI({ cache }), // pass in the cache from the ApolloServer
         },
       };
     },
