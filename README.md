@@ -4,7 +4,7 @@ A repository containing all the code I used while learning GraphQL and Apollo Se
 
 ## Certification
 
-I accomplished the GraphQL Associate Developer certification on June 1st, 2023.
+I received my Apollo GraphQL Associate Developer certification on June 1st, 2023.
 
 <img src="certification.png"/>
 
